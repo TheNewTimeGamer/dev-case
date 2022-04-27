@@ -78,6 +78,9 @@ class Car {
 
     /**
      * @param $time for how long the car needs to decelerate in seconds.
+     * @param $reactionTime time in seconds before the driver hits the brake.
+     * @param $frictionCoefficient how much traction the road has (0.7 is dry, 0.3/0.5 is wet).
+     * @param $slope the incline of the road (Positive incline is up hill).
      * @return An array containing the new speed of the car and the distance traveled.
      */
     public function brake($time, $reactionTime=1, $frictionCoefficient=0.7, $slope=0) {
