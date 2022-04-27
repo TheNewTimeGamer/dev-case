@@ -1,0 +1,8 @@
+/*
+    Main.css is used on all pages as the main stylesheet.
+    Additional stylesheets should be loaded after it to maintain concurency.
+*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+}
