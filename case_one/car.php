@@ -46,18 +46,16 @@ class Car {
     }
     
     /**
-     * @return The distance it takes for the car to come to a full stop in meters.
-     */
-    public function getBrakeDistance() {
-        return ($this->currentSpeed / 10) * ($this->currentSpeed / 10);
-    }
-
-    /**
      * @param $degrees The angle in degrees to turn (Clockwise orientation).
      * @return The new angle of the car.
      */
     public function turn($degrees) {
         $this->angle = $this->angle + $degrees;
+        if($this->angle > 360) {
+            $this->angle = $this->angle - 360;
+        }elseif($this->angle < 0) {
+            $this->angle = $this->angle + 360;
+        }
         return $this->angle;
     }
 
@@ -75,6 +73,21 @@ class Car {
         $this->currentSpeed = $this->currentSpeed + $this->properties->acceleration * $time;                        // Calculate the new speed.
         $distance = ($this->currentSpeed * $time) + 0.5*($this->properties->acceleration * ($time * $time));        // Calculate distance traveled while accelerating.
         $distance = $distance + ($deltaTime * $this->properties->maxSpeed);                                         // Add remaining distance traveled while at max speed.
+        return array("speed"=>$this->currentSpeed, "distance"=>$distance);
+    }
+
+    /**
+     * @param $time for how long the car needs to decelerate in seconds.
+     * @return An array containing the new speed of the car and the distance traveled.
+     */
+    public function brake($time, $reactionTime=1, $frictionCoefficient=0.7, $slope=0) {
+        $distanceTillStop = (0.278 * $reactionTime * $this->currentSpeed)                                       // Calculate distance travelled while braking.
+                            + ($this->currentSpeed*$this->currentSpeed) 
+                            / (254 * ($frictionCoefficient + $slope));
+
+        $timeTillStop = $distanceTillStop / $this->currentSpeed;                                                // Calculate time till stop.
+        $this->currentSpeed = ($time / $timeTillStop) * $this->currentSpeed;                                    // Calculate new speed (near estimate).
+        $distance = ($time / $timeTillStop) * $distanceTillStop;                                                // Calculate distance traveled while decelerating (near estimate)
         return array("speed"=>$this->currentSpeed, "distance"=>$distance);
     }
 
