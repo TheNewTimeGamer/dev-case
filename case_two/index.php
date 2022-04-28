@@ -10,5 +10,26 @@
 </head>
 <body>
     Case Two
+    <form action="" method="POST">
+        <input type="text" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" name="submit" value="register">
+    </form>
+
+    <?php
+        include('api.php');
+        if(!isset($_SESSION['api'])){
+            $_SESSION['api'] = new Reqres();
+        }
+        if(isset($_POST['submit'])){
+            if($_POST['submit'] == 'register'){
+                echo 'r';
+                $_SESSION['api']->registerUser($_POST['email'], $_POST['password']);
+            }elseif($_POST['submit' == 'login']){
+                $_SESSION['api']->loginUser($_POST['email'], $_POST['password']);
+            }
+        }
+        echo 'Token: ' . $_SESSION['api']->getToken();
+    ?>
 </body>
 </html>
