@@ -1,19 +1,19 @@
 <?php
-const BASE_URL = 'https://reqres.in/api';
 
 class Reqres {
 
     private $lastResult;
     private $token;
 
+    public const BASE_URL = 'https://reqres.in/api';
+
     public function registerUser($email, $password) {
         $data = array(
             'email' => $email,
             'password' => $password
         );
-        $result = $this->post(BASE_URL . '/register', $data);
+        $result = $this->post(Reqres::BASE_URL . '/register', $data);
         $this->lastResult = $result;
-        var_dump($result);
         if(!$result || !$result->token){
             return false;
         }
@@ -26,7 +26,7 @@ class Reqres {
             'email' => $email,
             'password' => $password
         );
-        $result = $this->post(BASE_URL + '/login', $data);
+        $result = $this->post(Reqres::BASE_URL + '/login', $data);
         $this->lastResult = $result;
         if(!$result || !$result->token){
             return false;
@@ -39,20 +39,12 @@ class Reqres {
         return $this->token;
     }
 
-    public function listUsers($page) {
-
-    }
-
-    public function getUser($userId) {
-
-    }
-
-    public function getResources($page) {
-        $result = $this->get($this->BASE_URL . '/users?page=' . $page);
+    public function getResources($page=0) {
+        return $this->get(Reqres::BASE_URL . '/unknown?page=' . $page);
     }
 
     public function getResource($resourceId) {
-        return $this->get($this->BASE_URL . '/unknown');
+        return $this->get(Reqres::BASE_URL . '/unknown/' . $resourceId);
     }
 
     private function get($url, $useToken=true) {
@@ -63,10 +55,12 @@ class Reqres {
         if($useToken){
             $headers[] = 'Authorization: Bearer ' . $this->token;
         }
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+        $result = curl_exec($curl);
+        curl_close($curl);
         return json_decode($result);
     }
 
