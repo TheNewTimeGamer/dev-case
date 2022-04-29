@@ -1,5 +1,7 @@
 <?php
 
+// Developer note: Reqres is stored in session, which is a bit overkill; the alternative is to store the token in local storage or as a cookie.
+// This shouldn't matter much as it's the classic pendulum of memory usage vs CPU time (As the object would be recreating for each request).
 class Reqres {
 
     private $lastResult;    // Used for whenever an api function returns false, this will allow you to debug the issue through 'getLastResult()'.
