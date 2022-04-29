@@ -21,3 +21,52 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
     background-color: rgb(56,56,56);
 }
+
+#resources {
+    display: inline-block;
+    width: 25%;
+    margin: 0% 37.25% 0% 37.25%;
+    background-color: rgb(48,48,48);
+    box-shadow: 0px 2px 5px 5px rgb(33,33,33);
+    margin-bottom: 8px;
+    padding: 0.5%;
+}
+
+#resources div {
+    display: inline-block;
+}
+
+#resources .name {
+    width: 45%;
+    text-indent: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#resources .color_code {
+    text-align: right;
+    width: 40%;
+}
+
+#resources .seperator {
+    width: 5%;
+    text-align: center;
+}
+
+#resources .color {
+    width: 5%;
+    padding-bottom: 5%; /** Neat css trick to maintain a 1:1 ratio. <3 */
+    margin-left: 6px;
+}
+
+#logout {
+    margin: 5px 37.5% 12.5% 37.5%;
+}
+
+#token {
+    width: 25%;
+    margin: 5px 37.5% 10px 37.5%;
+    padding: 5px;
+    box-shadow: 0px 2px 5px 5px rgb(33,33,33);
+}

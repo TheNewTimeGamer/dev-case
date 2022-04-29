@@ -82,7 +82,7 @@ class Reqres {
             'Content-Type: application/json',
             'Accept: application/json'
         );
-        if($useToken){
+        if($useToken && $this->token){
             $headers[] = 'Authorization: Bearer ' . $this->token;
         }
         return $headers;
@@ -123,7 +123,7 @@ class Reqres {
         curl_setopt($curl, CURLOPT_POST, 1);
         curl_setopt($curl, CURLOPT_POSTFIELDS, $postString);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+        //curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
         $result = curl_exec($curl);
         $this->lastResult = $result;
         curl_close($curl);

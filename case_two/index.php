@@ -17,6 +17,7 @@
 
     <?php
         include('api.php');
+        session_start();
         if(!isset($_SESSION['api'])){
             $_SESSION['api'] = new Reqres();
             var_dump($_SESSION['api']->getLastResult());
@@ -32,7 +33,7 @@
                 $_SESSION['api']->logoutUser();
             }
         }
-        echo 'Token: ' . $_SESSION['api']->getToken();
+        echo '<div id="token">Token: ' . $_SESSION['api']->getToken() . '</div>';
         $page = 1;
         // Developer note: This api end-point doesn't require an authenication token. But for the sake of the dev-case this if-statement serves to simulate such a scenario.
         if($_SESSION['api']->getToken()){
@@ -45,7 +46,8 @@
                 }
                 if(isset($resources)){
                     foreach($resources->data as $resource){
-                        echo '<br>' . $resource->name . ' = ' . $resource->color;
+                        echo '<div class="name">' . $resource->name . '</div><div class="seperator">=</div><div class="color_code">' . $resource->color . '</div>';
+                        echo '<div class="color" style="background-color: ' . $resource->color . '"></div>';
                     }
                 }
             }while($resources->total_pages > $page++);
