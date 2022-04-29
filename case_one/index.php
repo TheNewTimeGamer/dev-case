@@ -14,6 +14,11 @@
         <a href="/case_one"><div class="selected">Case one</div></a>
         <a href="/case_two"><div>Case two</div></a>
     </nav>
+    <div id="notation">
+        <h3>This output is just meant to be a demo of <a href="https://github.com/TheNewTimeGamer/dev-case/blob/master/case_one/car.php">car.php</a>'s functionality.</h3>
+        <h4>This isn't meant to look nice, but to demonstrate that the code works.</h4>
+        <h4><a href="/case_two">Case Two</a> has actual styling.</h4>
+    </div>
     <?php
         include('car.php');
         // Developer note: The following code is ugly but pragmatic, it demonstrates the functionality within 'car.php' which is the actual subject of the assignment.

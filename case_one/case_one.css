@@ -1,0 +1,18 @@
+h3 {
+    color: red;
+}
+
+h3 a {
+    color: white;
+}
+
+a {
+    color: whitesmoke;
+}
+
+#notation {
+    width: 40%;
+    padding: 5px;
+    margin: 5px 30% 5px 30%;
+    box-shadow: 0px 2px 5px 5px rgb(33,33,33);
+}
