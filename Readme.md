@@ -21,7 +21,7 @@ Other than that, use the nav-bar to navigate to the desired assignment.
 ## Case one
 Case one is a simple page simulating the requirements of the first assignment.
 
-This parameters are set to that of [Rimac Nevera](https://en.wikipedia.org/wiki/Rimac_Nevera).
+Its parameters are set to that of [Rimac Nevera](https://en.wikipedia.org/wiki/Rimac_Nevera).
 
 With additional parameters supplied by the assignment, such as the car being purple.
 
@@ -29,7 +29,8 @@ Due to the car's exceptional acceleration, to achieve 80km/h over 500m; the driv
 
 Additionally all calculations should be taken with a grain of salt. Some formulas have been implemented ad-hoc.
 
-As a further note, the way this data is displayed is ugly, including direct function calls and <br> tags. This is simply for practical reasons.
+**As a further note, the way this data is displayed is ugly, including direct function calls and <br> tags. This is simply for practical reasons.**
+**Please consult 'Case Two' for some actual styled content.**
 
 ## Case Two
 Case Two has some better markup.
