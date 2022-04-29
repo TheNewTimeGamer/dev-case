@@ -29,7 +29,7 @@ Due to the car's exceptional acceleration, to achieve 80km/h over 500m; the driv
 
 Additionally all calculations should be taken with a grain of salt. Some formulas have been implemented ad-hoc.
 
-**As a further note, the way this data is displayed is ugly, including direct function calls and <br> tags. This is simply for practical reasons.**
+**As a further note, the way this data is displayed is ugly, including direct function calls and `<br>` tags. This is simply for practical reasons.**
 **Please consult 'Case Two' for some actual styled content.**
 
 ## Case Two
