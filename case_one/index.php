@@ -16,7 +16,8 @@
     </nav>
     <?php
         include('car.php');
-        // Developer note: The following code is ugly but pragmatic, it demonstrates the functionality within 'car.php'.
+        // Developer note: The following code is ugly but pragmatic, it demonstrates the functionality within 'car.php' which is the actual subject of the assignment.
+        // Case Two has actual styling :)
         // https://en.wikipedia.org/wiki/Rimac_Nevera
         // Top speed and acceleration of the car converted to m/s.
         $carProperties = new CarProperties('Rimac Nevera', 'Rimac C_Two', 'Purple', 114.4, 14.1812, 'Electric', 'AWD');

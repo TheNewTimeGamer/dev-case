@@ -59,5 +59,4 @@ or
 > Developer note: Reqres is stored in session, which is a bit overkill; the alternative is to store the token in local storage or as a cookie.
 > This shouldn't matter much as it's the classic pendulum of memory usage vs CPU time (As the object would be recreating for each request).
 
-
-Lastly, I used Php-doc do document my code to reasonable extends but most of it should be self explanatory.
+:heart:
