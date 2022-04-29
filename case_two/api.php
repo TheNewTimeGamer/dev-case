@@ -35,7 +35,7 @@ class Reqres {
             'email' => $email,
             'password' => $password
         );
-        $result = $this->post(Reqres::BASE_URL + '/login', $data);
+        $result = $this->post(Reqres::BASE_URL . '/login', $data);
         if(!$result || !$result->token){
             return false;
         }
@@ -79,7 +79,6 @@ class Reqres {
      */
     private function buildHeaders($useToken) {
         $headers = array(
-            'Content-Type: application/json',
             'Accept: application/json'
         );
         if($useToken && $this->token){
@@ -123,7 +122,7 @@ class Reqres {
         curl_setopt($curl, CURLOPT_POST, 1);
         curl_setopt($curl, CURLOPT_POSTFIELDS, $postString);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        //curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
         $result = curl_exec($curl);
         $this->lastResult = $result;
         curl_close($curl);

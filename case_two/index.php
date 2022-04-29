@@ -57,7 +57,7 @@
             echo    '<form id="login" action="" method="POST">
                     <input type="text" name="email" placeholder="Email">
                     <input type="password" name="password" placeholder="Password">
-                    <input type="submit" name="submit" value="register">
+                    <input type="submit" name="submit" value="login">
                     </form>';            
         }
     ?>
