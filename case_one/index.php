@@ -14,9 +14,37 @@
         <a href="/case_one"><div class="selected">Case one</div></a>
         <a href="/case_two"><div>Case two</div></a>
     </nav>
-    Case One
     <?php
         include('car.php');
+        // Developer note: The following code is ugly but pragmatic, it demonstrates the functionality within 'car.php'.
+        // https://en.wikipedia.org/wiki/Rimac_Nevera
+        // Top speed and acceleration of the car converted to m/s.
+        $carProperties = new CarProperties('Rimac Nevera', 'Rimac C_Two', 'Purple', 114.4, 14.1812, 'Electric', 'AWD');
+        $car = new Car($carProperties);
+        echo "Created new car: ";
+        echo "<br>";
+        echo $carProperties;
+        echo "<br>";
+        echo "<br>";
+        echo "Accelerating to 80km/h (22m/s) over 500m. Using an acceleration of 1.45 m/s² over 15.2 seconds.";
+        echo "<br>";
+        echo "Acceleration of the car is limited to achieve parameters. This simulates the driver not pressing down the gas pedal fully.";
+        echo "<br>";
+        var_dump($car->accelerate(15.2, 1.45));
+        echo "<br>";
+        echo "<br>";
+        echo "Car angle: " . $car->getAngle();
+        echo "<br>";
+        echo "Turning left 90 degrees.";
+        echo "<br>";
+        echo "Car angle: " . $car->turn(-90);
+        echo "<br>";
+        echo "<br>";
+        echo "Stopping car:";
+        echo "<br>";
+        $distanceTillStop = $car->getDistanceTillStop(0.5, 0.7, 0);
+        $timeTillStop = $car->getTimeTillStop($distanceTillStop);
+        var_dump($car->brake($timeTillStop+1));
     ?>
 </body>
 </html>

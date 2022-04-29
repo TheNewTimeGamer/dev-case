@@ -78,6 +78,7 @@ class Reqres {
      * @return array Resulting headers.
      */
     private function buildHeaders($useToken) {
+        // Developer note: Content-Type should be supplied but is not strictly required for this api.
         $headers = array(
             'Accept: application/json'
         );
