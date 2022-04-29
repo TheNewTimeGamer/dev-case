@@ -18,7 +18,7 @@ It contains [lights-out](https://github.com/TheNewTimeGamer/lights-out), a game 
 
 Other than that, use the nav-bar to navigate to the desired assignment.
 
-## Case one
+## Case One
 Case one is a simple page simulating the requirements of the first assignment.
 
 Its parameters are set to that of [Rimac Nevera](https://en.wikipedia.org/wiki/Rimac_Nevera).
