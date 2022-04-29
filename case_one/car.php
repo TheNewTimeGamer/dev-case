@@ -13,13 +13,13 @@ class CarProperties {
     public $drive;
 
     /**
-     * @param $name Name/Identification of the car.
-     * @param $model Model of the car.
-     * @param $color Color of the car.
-     * @param $maxSpeed Maximum speed of the car in m/s.
-     * @param $acceleration Acceleration of the car in m/s².
-     * @param $powerplant Powerplant of the car (Diesel, Gasoline, Electric, Hydrogen).
-     * @param $drive Drive of the car. (FWD, RWD, AWD)
+     * @param string $name Name/Identification of the car.
+     * @param string $model Model of the car.
+     * @param mixed $color Color of the car.
+     * @param double $maxSpeed Maximum speed of the car in m/s.
+     * @param double $acceleration Acceleration of the car in m/s².
+     * @param string $powerplant Powerplant of the car (Diesel, Gasoline, Electric, Hydrogen).
+     * @param string $drive Drive of the car. (FWD, RWD, AWD)
      */    
     public function __construct($name, $model, $color, $maxSpeed, $acceleration, $powerplant, $drive) {
         $this->name = $name;
@@ -46,8 +46,8 @@ class Car {
     }
     
     /**
-     * @param $degrees The angle in degrees to turn (Clockwise orientation).
-     * @return The new angle of the car.
+     * @param double The angle in degrees to turn (Clockwise orientation).
+     * @return double new angle of the car.
      */
     public function turn($degrees) {
         $this->angle = $this->angle + $degrees;
@@ -60,8 +60,8 @@ class Car {
     }
 
     /**
-     * @param $time for how long the car needs to accelerate in seconds.
-     * @return An array containing the new speed of the car and the distance traveled.
+     * @param double $time for how long the car needs to accelerate in seconds.
+     * @return array An array containing the new speed of the car and the distance traveled.
      */
     public function accelerate($time) {
         $timeTillTopSpeed = ($this->properties->maxSpeed - $this->currentSpeed) / $this->properties->acceleration;  // Get time till max speed is achieved.
@@ -77,11 +77,11 @@ class Car {
     }
 
     /**
-     * @param $time for how long the car needs to decelerate in seconds.
-     * @param $reactionTime time in seconds before the driver hits the brake.
-     * @param $frictionCoefficient how much traction the road has (0.7 is dry, 0.3/0.5 is wet).
-     * @param $slope the incline of the road (Positive incline is up hill).
-     * @return An array containing the new speed of the car and the distance traveled.
+     * @param double $time for how long the car needs to decelerate in seconds.
+     * @param double $reactionTime time in seconds before the driver hits the brake.
+     * @param double $frictionCoefficient how much traction the road has (0.7 is dry, 0.3/0.5 is wet).
+     * @param double $slope the incline of the road (Positive incline is up hill).
+     * @return array An array containing the new speed of the car and the distance traveled.
      */
     public function brake($time, $reactionTime=1, $frictionCoefficient=0.7, $slope=0) {
         $distanceTillStop = (0.278 * $reactionTime * $this->currentSpeed)                                       // Calculate distance travelled while braking.
