@@ -20,6 +20,7 @@ It contains [lights-out](https://github.com/TheNewTimeGamer/lights-out), a game 
 Case one is a simple page simulating the requirements of the first assignment.
 
 This parameters are set to that of [Rimac Nevera](https://en.wikipedia.org/wiki/Rimac_Nevera).
+
 With additional parameters supplied by the assignment, such as the car being purple.
 
 Due to the car's exceptional acceleration, to achieve 80km/h over 500m; the driver does not depress the gas pedal fully.
@@ -34,10 +35,10 @@ Case Two has some better markup.
 Initially the 'Token' field will be empty as the user hasn't logged in yet.
 
 To log in use the credentials:
-...
+```
 Username: eve.holt@reqres.in
 Password: cityslicka
-...
+```
 
 These credentials are predetermined [here](https://reqres.in/).
 
