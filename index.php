@@ -14,8 +14,11 @@
         <a href="/case_one"><div>Case one</div></a>
         <a href="/case_two"><div>Case two</div></a>
     </nav>
-    <h4>I never know what to put on the homepage :)</h4>
+    <h4 class="source">I never know what to put on the homepage :)</h4>
     <br>
-    <iframe src="https://github.com/TheNewTimeGamer/dev-case/blob/master/readme.md" title="Readme"></iframe>
+    <div class="source"><a href="https://github.com/TheNewTimeGamer/lights-out">Source</a></div>
+    <br>
+    <div id="container" class="unselectable"></div>
+    <script type="text/javascript" src="lights.js"></script>
 </body>
 </html>

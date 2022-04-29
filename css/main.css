@@ -42,3 +42,10 @@ nav a div:hover {
 .selected { 
     background-color: rgb(56,56,56);
 }
+
+.unselectable {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
