@@ -47,7 +47,7 @@ These credentials are predetermined [here](https://reqres.in/).
 The api class also supports registration but is as far as the api is concidered identical to logging in.
 
 ## Additional information
-Some code will contain comments containing `Developer note`.
+Some code will contain comments containing `Developer note:`.
 
 These notes are put in place to explain my reasoning, why I used a short hand or alternatives that could have been used.
 
